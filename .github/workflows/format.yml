@@ -1,0 +1,53 @@
+name: format
+
+on: push
+
+jobs:
+  black:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: "3.11"
+    - name: Install deps
+      uses: knowsuchagency/poetry-install@v1
+    - name: Run black check
+      run: poetry run black --check --diff .
+  isort:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: "3.11"
+    - name: Install deps
+      uses: knowsuchagency/poetry-install@v1
+    - name: Run isort check
+      run: poetry run isort --check-only --diff .
+  flake8:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: "3.11"
+    - name: Install deps
+      uses: knowsuchagency/poetry-install@v1
+    - name: Run flake8 check
+      run: poetry run flake8 --count .
+  mypy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: "3.11"
+    - name: Install deps
+      uses: knowsuchagency/poetry-install@v1
+    - name: Run mypy check
+      run: poetry run mypy .
