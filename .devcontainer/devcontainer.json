@@ -26,7 +26,7 @@
     8000
   ],
   // Use 'postCreateCommand' to run commands after the container is created.
-  "postCreateCommand": "pip install poetry; poetry install",
+  "postCreateCommand": "pip install poetry; poetry install; poetry run pre-commit install",
   // Configure tool-specific properties.
   "customizations": {
     "vscode": {
