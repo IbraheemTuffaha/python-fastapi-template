@@ -1,11 +1,11 @@
-FROM python:3.11 AS build
+FROM python:3.12 AS build
 
 WORKDIR /tmp
 RUN pip install poetry
 COPY ./pyproject.toml ./poetry.lock* /tmp/
 RUN poetry export -f requirements.txt --output requirements.txt --without-hashes
 
-FROM python:3.11-slim
+FROM python:3.12-slim
 
 WORKDIR /code
 COPY --from=build /tmp/requirements.txt /code/requirements.txt

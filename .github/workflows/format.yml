@@ -10,7 +10,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: "3.11"
+        python-version: "3.12"
     - name: Install deps
       uses: knowsuchagency/poetry-install@v1
     - name: Run black check
@@ -22,7 +22,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: "3.11"
+        python-version: "3.12"
     - name: Install deps
       uses: knowsuchagency/poetry-install@v1
     - name: Run isort check
@@ -34,7 +34,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: "3.11"
+        python-version: "3.12"
     - name: Install deps
       uses: knowsuchagency/poetry-install@v1
     - name: Run flake8 check
@@ -46,7 +46,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: "3.11"
+        python-version: "3.12"
     - name: Install deps
       uses: knowsuchagency/poetry-install@v1
     - name: Run mypy check
