@@ -1,0 +1,63 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/python
+{
+  "name": "PythonFastAPITemplate",
+  // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+  "image": "mcr.microsoft.com/devcontainers/python:3.11",
+  // Features to add to the dev container. More info: https://containers.dev/features.
+  "features": {
+    "ghcr.io/rocker-org/devcontainer-features/apt-packages:latest": {
+      "packages": "curl"
+    },
+    "ghcr.io/devcontainers/features/git:latest": {},
+    "ghcr.io/jungaretti/features/vim:latest": {},
+    "ghcr.io/devcontainers/features/common-utils:latest": {
+      "username": "vscode",
+      "uid": 1000,
+      "gid": 1000,
+      "installZsh": true,
+      "installOhMyZsh": true,
+      "configureZshAsDefaultShell": true,
+      "upgradePackages": true
+    }
+  },
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  "forwardPorts": [
+    8000
+  ],
+  // Use 'postCreateCommand' to run commands after the container is created.
+  "postCreateCommand": "pip install poetry; poetry install",
+  // Configure tool-specific properties.
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "workbench": {
+          "iconTheme": "vscode-icons"
+        },
+        "editor": {
+          "formatOnSave": true,
+          "defaultFormatter": "ms-python.black-formatter",
+          "codeActionsOnSave": {
+            "source.organizeImports": true
+          }
+        }
+      },
+      "extensions": [
+        "Postman.postman-for-vscode",
+        "vscode-icons-team.vscode-icons",
+        "eamodio.gitlens",
+        "waderyan.gitblame",
+        "shardulm94.trailing-spaces",
+        "oderwat.indent-rainbow",
+        "tamasfe.even-better-toml",
+        "redhat.vscode-yaml",
+        "ms-python.mypy-type-checker",
+        "ms-python.flake8",
+        "ms-python.black-formatter",
+        "ms-python.isort"
+      ]
+    }
+  }
+  // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+  // "remoteUser": "root"
+}
