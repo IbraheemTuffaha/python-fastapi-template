@@ -1,0 +1,77 @@
+[flake8]
+max-complexity = 6
+inline-quotes = double
+max-line-length = 120
+
+ignore =
+  ; Do not perform function calls in argument defaults (for dependency injection)
+  B008,
+  ; Missing docstring
+  D100, D101, D102, D103, D104, D105, D106, D107,
+  ; Found wrong module name
+  WPS100,
+  ; Found wrong variable name
+  WPS110,
+  ; Found module with too many imports
+  WPS201,
+  ; Found too many module members
+  WPS202,
+  ; Found overused expression
+  WPS204,
+  ; Found too many methods
+  WPS214,
+  ; Found string constant over-use
+  WPS226,
+  ; Found too long ``try`` body
+  WPS229,
+  ; Found too high module cognitive complexity
+  WPS232,
+  ; Found `f` string
+  WPS305,
+  ; Found class without a base class
+  WPS306,
+  ; Found complex default value (for dependency injection)
+  WPS404,
+  ; Found mutable module constant.
+  WPS407,
+  ; Found `__init__.py` module with logic
+  WPS412,
+  ; Found too many empty lines in `def`
+  WPS473,
+  ; Found too many arguments
+  WPS211,
+
+per-file-ignores =
+  ; all tests
+  test_*.py,tests.py,tests_*.py,*/tests/*,conftest.py:
+  ; Use of assert detected
+  S101,
+  ; Found too many local variables
+  WPS210,
+  ; Found too many arguments
+  WPS211,
+  ; Found magic number
+  WPS432,
+
+  ; all init files
+  __init__.py:
+  ; ignore not used imports
+  F401,
+  ; ignore import with wildcard
+  F403,
+  ; Found wrong metadata variable
+  WPS410,
+
+exclude =
+  ./.cache,
+  ./.git,
+  ./.idea,
+  ./.mypy_cache,
+  ./.pytest_cache,
+  ./.venv,
+  ./venv,
+  ./env,
+  ./cached_venv,
+  ./docs,
+  ./var,
+  ./.vscode,
