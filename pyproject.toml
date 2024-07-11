@@ -2,7 +2,7 @@
 name = "python-fastapi-template"
 version = "0.1.0"
 description = "A template for a Python FastAPI service with Poetry & Devcontainer"
-authors = ["Ibraheem Tuffaha <ibraheem@milkstraw.ai>"]
+authors = ["Ibraheem Tuffaha <ibraheem.z.tuffaha@gmail.com>"]
 license = "MIT"
 readme = "README.md"
 package-mode = false
