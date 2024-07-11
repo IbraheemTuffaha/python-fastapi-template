@@ -32,6 +32,8 @@ line_length = 120
 profile = "black"
 line_length = 120
 src_paths = ["app"]
+lines_between_types = 1
+lines_after_imports = 2
 
 [tool.mypy]
 strict = true
