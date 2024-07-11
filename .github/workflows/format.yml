@@ -8,11 +8,11 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v5
       with:
-        python-version: "3.12"
+        python-version-file: 'pyproject.toml'
     - name: Install deps
-      uses: knowsuchagency/poetry-install@v1
+      uses: knowsuchagency/poetry-install@v2
     - name: Run black check
       run: poetry run black --check --diff .
   isort:
@@ -20,11 +20,11 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v5
       with:
-        python-version: "3.12"
+        python-version-file: 'pyproject.toml'
     - name: Install deps
-      uses: knowsuchagency/poetry-install@v1
+      uses: knowsuchagency/poetry-install@v2
     - name: Run isort check
       run: poetry run isort --check-only --diff .
   flake8:
@@ -32,11 +32,11 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v5
       with:
-        python-version: "3.12"
+        python-version-file: 'pyproject.toml'
     - name: Install deps
-      uses: knowsuchagency/poetry-install@v1
+      uses: knowsuchagency/poetry-install@v2
     - name: Run flake8 check
       run: poetry run flake8 --count .
   mypy:
@@ -44,10 +44,10 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v5
       with:
-        python-version: "3.12"
+        python-version-file: 'pyproject.toml'
     - name: Install deps
-      uses: knowsuchagency/poetry-install@v1
+      uses: knowsuchagency/poetry-install@v2
     - name: Run mypy check
       run: poetry run mypy .
