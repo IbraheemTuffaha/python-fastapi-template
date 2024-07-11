@@ -34,3 +34,6 @@ poetry run uvicorn app.main:app --port 8000 --reload
 docker build -t app .
 docker run -p 8000:8000 -it app
 ```
+
+### Note:
+If you face an issue with git ssh access while pushing new changes, run `ssh-add $HOME/.ssh/<your ssh key>` in terminal outside the devcontainer.
