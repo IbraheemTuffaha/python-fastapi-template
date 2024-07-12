@@ -8,7 +8,7 @@ A template for a Python FastAPI service:
 - [x] [Black](https://black.readthedocs.io/) & [isort](https://pycqa.github.io/isort/) for code formatting
 - [x] [pre-commit](https://pre-commit.com/) for code quality checks
 - [x] [Github Actions](https://github.com/features/actions) for CI/CD
-- [ ] [pytest](https://docs.pytest.org/) for testing (TODO: add tests)
+- [x] [pytest](https://docs.pytest.org/) for testing
 - [ ] [Kamal](https://kamal-deploy.org/) for deployment (TODO: add Kamal deploy action)
 
 ## Build and run locally
