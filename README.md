@@ -35,5 +35,7 @@ docker build -t app .
 docker run -p 8000:8000 -it app
 ```
 
-### Note:
-If you face an issue with git ssh access while pushing new changes, run `ssh-add $HOME/.ssh/<your ssh key>` in terminal outside the devcontainer.
+### Notes
+- If you face an issue with **git ssh access** while pushing new changes, run `ssh-add $HOME/.ssh/<your ssh key>` in terminal outside the devcontainer.
+
+- If you face an issue during **devcontainer build**, make sure the repo is marked as trusted in VSCode. Check `Source Control` tab in the sidebar to mark the repo safe, then rebuild the devcontainer.
