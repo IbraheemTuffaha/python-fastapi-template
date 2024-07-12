@@ -42,4 +42,4 @@ strict = true
 pretty = true
 
 [tool.pytest.ini_options]
-addopts = "--cov=app --cov-branch --cov-report=term --cov-report=html"
+addopts = "--cov=app --cov-branch --cov-report=term --cov-report=html --cov-fail-under=100"
