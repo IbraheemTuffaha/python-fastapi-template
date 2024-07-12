@@ -63,3 +63,4 @@ repos:
         pass_filenames: false
         args:
         - "app"
+        - "tests"

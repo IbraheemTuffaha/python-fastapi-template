@@ -28,6 +28,11 @@ Run locally
 poetry run uvicorn app.main:app --port 8000 --reload
 ```
 
+## Run tests
+```
+poetry run pytest
+```
+
 ## Build and run using Docker
 
 ```
