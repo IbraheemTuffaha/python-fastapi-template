@@ -1,3 +1,11 @@
+<div align="center">
+
+  [![pytest](https://github.com/IbraheemTuffaha/python-fastapi-template/actions/workflows/pytest.yml/badge.svg)](https://github.com/IbraheemTuffaha/python-fastapi-template/actions/workflows/pytest.yml)
+  [![format](https://github.com/IbraheemTuffaha/python-fastapi-template/actions/workflows/format.yml/badge.svg)](https://github.com/IbraheemTuffaha/python-fastapi-template/actions/workflows/format.yml)
+  [![python](https://img.shields.io/badge/dynamic/toml?url=https%3A%2F%2Fraw.githubusercontent.com%2FIbraheemTuffaha%2Fpython-fastapi-template%2Fmain%2Fpyproject.toml&query=tool.poetry.dependencies.python&label=python&color=greenlime)](https://github.com/IbraheemTuffaha/python-fastapi-template/blob/main/pyproject.toml)
+  [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=IbraheemTuffaha_python-fastapi-template&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=IbraheemTuffaha_python-fastapi-template)
+</div>
+
 # Python FastAPI Template
 
 A template for a Python FastAPI service:
