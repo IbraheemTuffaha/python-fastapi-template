@@ -40,7 +40,13 @@ ignore =
   WPS473,
   ; Found too many arguments
   WPS211,
-
+  ; Found local folder import
+  WPS300,
+  ; multiple statements on one line (colon)
+  E701,
+  ; Found incorrect node inside `class` body
+  WPS604,
+  
 per-file-ignores =
   ; all tests
   test_*.py,tests.py,tests_*.py,*/tests/*,conftest.py:

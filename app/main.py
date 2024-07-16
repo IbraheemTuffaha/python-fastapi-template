@@ -1,12 +1,12 @@
 from fastapi import FastAPI
 from fastapi.responses import RedirectResponse
 
-from app.routers import dummy
+from app.v1.routers import router as v1_router
 
 
 app = FastAPI()
 
-app.include_router(dummy.router)
+app.include_router(v1_router)
 
 
 @app.get("/up")
