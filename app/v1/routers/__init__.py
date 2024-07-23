@@ -1,4 +1,3 @@
-from .base import router
+__all__ = ["router"]
 
-
-__all__ = ("router",)
+from app.v1.routers.base import router

@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 
-from .dummy import router as dummy_router
+from app.v1.routers.dummy import router as dummy_router
 
 
 router = APIRouter(prefix="/v1")

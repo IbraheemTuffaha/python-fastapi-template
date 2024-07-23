@@ -1,11 +1,5 @@
 from pydantic import BaseModel
 
 
-class BaseCapitalize(BaseModel):
+class Capitalize(BaseModel):
     text: str
-
-
-class CapitalizeIn(BaseCapitalize): ...
-
-
-class CapitalizeOut(BaseCapitalize): ...
