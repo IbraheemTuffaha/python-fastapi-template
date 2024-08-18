@@ -53,3 +53,14 @@ docker run -p 8000:8000 -it app
 - If you face an issue with **git ssh access** while pushing new changes, run `ssh-add $HOME/.ssh/<your ssh key>` in terminal outside the devcontainer.
 
 - If you face an issue during **devcontainer build**, make sure the repo is marked as trusted in VSCode. Check `Source Control` tab in the sidebar to mark the repo safe, then rebuild the devcontainer.
+
+## Sample CRUD API
+
+The `/v1` directory contains a sample API router demonstrating basic CRUD operations for users:
+
+- Endpoints: Create, Read, Update, Delete users
+- Router setup: `app/v1/routers/base.py` and `app/v1/routers/users.py`
+- User model: `app/v1/models/user.py`
+- User management: `app/v1/services/user/user_manager.py`
+
+Use the samples as a starting point for your own API endpoints. View available endpoints at `http://localhost:8000/docs`.
