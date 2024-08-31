@@ -1,7 +1,8 @@
 from fastapi import APIRouter, Depends, HTTPException, status
 
+from app.v1.dependencies import get_user_manager
 from app.v1.models import User
-from app.v1.services import UserManager, get_user_manager
+from app.v1.services import UserManager
 
 
 router = APIRouter()
