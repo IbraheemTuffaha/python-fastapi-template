@@ -2,7 +2,7 @@
 
   [![pytest Action](https://github.com/IbraheemTuffaha/python-fastapi-template/actions/workflows/pytest.yml/badge.svg)](https://github.com/IbraheemTuffaha/python-fastapi-template/actions/workflows/pytest.yml)
   [![format Action](https://github.com/IbraheemTuffaha/python-fastapi-template/actions/workflows/format.yml/badge.svg)](https://github.com/IbraheemTuffaha/python-fastapi-template/actions/workflows/format.yml)
-  [![Python Version](https://img.shields.io/badge/dynamic/toml?url=https%3A%2F%2Fraw.githubusercontent.com%2FIbraheemTuffaha%2Fpython-fastapi-template%2Fmain%2Fpyproject.toml&query=tool.poetry.dependencies.python&label=python&color=greenlime)](https://github.com/IbraheemTuffaha/python-fastapi-template/blob/main/pyproject.toml)
+  [![Python Version](https://img.shields.io/badge/dynamic/toml?url=https%3A%2F%2Fraw.githubusercontent.com%2FIbraheemTuffaha%2Fpython-fastapi-template%2Fmain%2Fpyproject.toml&query=project.requires-python&label=python&color=greenlime)](https://github.com/IbraheemTuffaha/python-fastapi-template/blob/main/pyproject.toml)
   [![GitHub License](https://img.shields.io/github/license/IbraheemTuffaha/python-fastapi-template?color=greenlime)](https://github.com/IbraheemTuffaha/python-fastapi-template/blob/main/LICENSE)
   [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=IbraheemTuffaha_python-fastapi-template&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=IbraheemTuffaha_python-fastapi-template)
 </div>
@@ -10,7 +10,7 @@
 # Python FastAPI Template
 
 A template for a Python FastAPI service:
-- [x] [Poetry](https://python-poetry.org/docs/basic-usage/) for dependency management
+- [x] [uv](https://docs.astral.sh/uv/getting-started/) for dependency management
 - [x] [FastAPI](https://fastapi.tiangolo.com/) for building the API
 - [x] [Devcontainer](https://code.visualstudio.com/docs/devcontainers/tutorial) for development environment
 - [x] [Docker](https://www.docker.com/) for containerization
@@ -22,24 +22,25 @@ A template for a Python FastAPI service:
 
 ## Build and run locally
 
-Using `python3.12` install `poetry`:
+Install `uv` and `python3.12`
 ```
-pip install poetry
+curl -LsSf https://astral.sh/uv/install.sh | sh
+uv python install 3.12
 ```
 
 Then install dependencies
 ```
-poetry install
+uv sync --frozen
 ```
 
 Run locally
 ```
-poetry run uvicorn app.main:app --port 8000 --reload
+uv run uvicorn app.main:app --port 8000 --reload
 ```
 
 ## Run tests
 ```
-poetry run pytest
+uv run pytest
 ```
 
 ## Build and run using Docker
