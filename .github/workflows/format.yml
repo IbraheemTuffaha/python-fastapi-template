@@ -3,59 +3,29 @@ name: format
 on: [push, pull_request]
 
 jobs:
-  black:
+  format:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        linter: [black, isort, flake8, mypy]
+        include:
+          - linter: black
+            command: black --check --diff .
+          - linter: isort
+            command: isort --check-only --diff .
+          - linter: flake8
+            command: flake8 --count .
+          - linter: mypy
+            command: mypy .
     steps:
-    - uses: actions/checkout@v4
-    - name: Install uv
-      uses: astral-sh/setup-uv@v5
-    - name: Set up Python
-      uses: actions/setup-python@v5
-      with:
-        python-version-file: "pyproject.toml"
-    - name: Install dependencies
-      run: uv sync --frozen
-    - name: Run black check
-      run: uv run black --check --diff .
-  isort:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v4
-    - name: Install uv
-      uses: astral-sh/setup-uv@v5
-    - name: Set up Python
-      uses: actions/setup-python@v5
-      with:
-        python-version-file: "pyproject.toml"
-    - name: Install dependencies
-      run: uv sync --frozen
-    - name: Run isort check
-      run: uv run isort --check-only --diff .
-  flake8:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v4
-    - name: Install uv
-      uses: astral-sh/setup-uv@v5
-    - name: Set up Python
-      uses: actions/setup-python@v5
-      with:
-        python-version-file: "pyproject.toml"
-    - name: Install dependencies
-      run: uv sync --frozen
-    - name: Run flake8 check
-      run: uv run flake8 --count .
-  mypy:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v4
-    - name: Install uv
-      uses: astral-sh/setup-uv@v5
-    - name: Set up Python
-      uses: actions/setup-python@v5
-      with:
-        python-version-file: "pyproject.toml"
-    - name: Install dependencies
-      run: uv sync --frozen
-    - name: Run mypy check
-      run: uv run mypy .
+      - uses: actions/checkout@v4
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version-file: "pyproject.toml"
+      - name: Install dependencies
+        run: uv sync --frozen
+      - name: Run ${{ matrix.linter }} check
+        run: uv run ${{ matrix.command }}
