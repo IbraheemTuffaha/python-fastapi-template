@@ -1,31 +1,28 @@
-[tool.poetry]
+[project]
 name = "python-fastapi-template"
 version = "0.1.0"
-description = "A template for a Python FastAPI service with Poetry & Devcontainer"
+description = "A template for a Python FastAPI service with uv & Devcontainer"
 authors = ["Ibraheem Tuffaha <ibraheem.z.tuffaha@gmail.com>"]
 license = "MIT"
 readme = "README.md"
-package-mode = false
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi[standard]>=0.115.8",
+]
 
-[tool.poetry.dependencies]
-python = "3.12.x"
-fastapi = "^0.111.0"
 
-
-[tool.poetry.group.dev.dependencies]
-pre-commit = "^3.7.1"
-black = "^24.4.2"
-isort = "^5.13.2"
-mypy = "^1.10.1"
-flake8 = "^7.1.0"
-autoflake = "^2.3.1"
-wemake-python-styleguide = "^0.19.2"
-pytest = "^8.2.2"
-pytest-cov = "^5.0.0"
-
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+[dependency-groups]
+dev = [
+    "autoflake>=2.3.1",
+    "black>=25.1.0",
+    "flake8>=7.1.2",
+    "isort>=6.0.0",
+    "mypy>=1.15.0",
+    "pre-commit>=4.1.0",
+    "pytest>=8.3.4",
+    "pytest-cov>=6.0.0",
+    "wemake-python-styleguide>=1.0.0",
+]
 
 [tool.black]
 line-length = 120
