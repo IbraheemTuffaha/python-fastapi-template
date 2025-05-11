@@ -31,6 +31,8 @@ async def list_users(user_manager: UserManager = Depends(get_user_manager)) -> l
 
 @router.put("/{username}")
 async def update_user(username: str, user: User, user_manager: UserManager = Depends(get_user_manager)) -> User:
+    if username != user.username:
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Username mismatch")
     try:
         return user_manager.update_user(username, user)
     except ValueError as ex:

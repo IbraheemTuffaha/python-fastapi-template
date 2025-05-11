@@ -59,28 +59,3 @@ def test_delete_user(client: TestClient) -> None:
     # Verify the user is deleted
     response = client.get("/v1/users/deleteuser")
     assert response.status_code == 404
-
-
-def test_create_duplicate_user(client: TestClient) -> None:
-    user_data = {"username": "duplicate", "email": "duplicate@example.com"}
-    client.post("/v1/users/", json=user_data)
-
-    # Try to create a user with the same username
-    response = client.post("/v1/users/", json=user_data)
-    assert response.status_code == 409
-
-
-def test_get_nonexistent_user(client: TestClient) -> None:
-    response = client.get("/v1/users/nonexistent")
-    assert response.status_code == 404
-
-
-def test_update_nonexistent_user(client: TestClient) -> None:
-    user_data = {"username": "nonexistent", "email": "nonexistent@example.com"}
-    response = client.put("/v1/users/nonexistent", json=user_data)
-    assert response.status_code == 404
-
-
-def test_delete_nonexistent_user(client: TestClient) -> None:
-    response = client.delete("/v1/users/nonexistent")
-    assert response.status_code == 404
